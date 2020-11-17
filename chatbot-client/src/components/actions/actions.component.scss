@@ -1,0 +1,39 @@
+$bg-grey : #e5e5e5;
+$bg-darker-grey : #d4d4d4;
+$bg-light : #fff;
+$bg-pink : #e01a5d;
+
+.fin-input-icon{
+    border-left: 1px solid $bg-grey;
+}
+.fin-input{
+    background: $bg-grey;
+    height: 10%;
+}
+.fin-keyboard{
+    color : $bg-darker-grey;
+}
+.fin-btn-send{
+    background : $bg-pink;
+    color : $bg-light;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    text-transform: uppercase;
+}
+
+.fin-keyboard{
+    @media (min-width: 576px) {
+        display: none;
+    }
+    @media (min-width: 768px) {
+        display : block;
+    }
+    @media (min-width: 992px) {
+        display : block;
+    }
+    @media (min-width: 1200px) {
+        display: block;
+    }
+
+}

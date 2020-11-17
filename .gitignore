@@ -1,0 +1,9 @@
+node_modules/
+.vscode/
+.DS_Store
+chatbot-rasa-nlu/__init__.py
+chatbot-rasa-nlu/__pycache__
+*.db*
+chatbot-rasa-nlu/graph.html
+chatbot-rasa-nlu/models/
+

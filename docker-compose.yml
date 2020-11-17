@@ -1,0 +1,51 @@
+version: "3.8"
+services:
+    ui: 
+        container_name: chatbot-ui
+        stdin_open: true
+        build: 
+            context: ./chatbot-client
+        environment: 
+            - CLIENT_PORT=${CLIENT_PORT}
+        expose : 
+            - ${CLIENT_PORT}
+        ports:
+            - ${CLIENT_PORT}:${CLIENT_PORT}
+        links:
+            - server
+        volumes: 
+            - ./chatbot-client/src:/srv/app/fin-chatbot-client/src
+            - ./chatbot-client/public:/srv/app/fin-chatbot-client/public
+            - /chatbot-client/node_modules
+        env_file: .env
+    server:
+        container_name: chatbot-container
+        restart: always
+        build: ./chatbot-server
+        expose : 
+            - ${APP_SERVER_PORT}
+        ports:
+            - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
+        links:
+            - mongo
+        volumes: 
+            - ./chatbot-server/src:/srv/app/fin-chatbot-server/src
+            - /chatbot-server/node_modules
+        env_file: .env
+    mongo:
+        container_name: mongo-chatbot
+        image: mongo
+        ports:
+            - ${DB_PORT}:${DB_PORT}
+        env_file: .env
+    rasa:
+        container_name: chatbot-rasa-nlu
+        build: ./chatbot-rasa-nlu
+        ports:
+            - ${RASA_PORT}:${RASA_PORT}
+        command:
+            - run
+        volumes:
+            - ./chatbot-rasa-nlu/data:/app/data
+            - ./chatbot-rasa-nlu
+        env_file: .env

@@ -1,0 +1,28 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- check_balance
+slots:
+  account_balance:
+    type: unfeaturized
+responses:
+  utter_greet:
+  - text: Hi! I'm your Financial Assistant!
+  - text: Hi there! I'm your Financial Assistant!
+  - text: Good day! I'm your Financial Assistant!
+  - text: Greetings! I'm your Financial Assistant!
+  - text: Hello! I'm your Financial Assistant!
+  - text: Hello there! I'm your Financial Assistant!
+  utter_help:
+  - text: "I can help you with your financial accounts. \nYou can ask me things like:\
+      \ \n- What's my account balance?"
+  - text: "How can I help you? \nYou can ask me things like:\
+      \ \n- What's my account balance?"
+  - text: "How may I assist you? \nYou can ask me things like:\
+      \ \n- What's my account balance?"
+actions:
+- action_account_balance
+- action_goodbye

@@ -1,0 +1,4 @@
+{
+    "host" : "http://localhost",
+    "app_server_port" : "4000"
+}
