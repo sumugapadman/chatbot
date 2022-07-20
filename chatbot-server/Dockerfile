@@ -2,7 +2,7 @@
 FROM alpine:3.9
 FROM node:12.0
 
-LABEL maintainer="arun_prasath@ymail.com"
+LABEL maintainer="sumugapadman@yahoo.in"
 
 ENV APP /srv/app/fin-chatbot-server/
 
